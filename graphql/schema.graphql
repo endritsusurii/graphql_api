@@ -5,18 +5,66 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    users: [User!]! @paginate(defaultCount: 10)
-    user(id: ID @eq): User @find
-    produktet: [Produktet!]! @all
+    porosite(id: ID @eq): Porosite @find
+    porosites: [Porosite!]! @all
+    detajet_e_porosise(id: ID @eq): Detajet_e_porosise @find
+    detajet_e_porosises: [Detajet_e_porosise!]! @all
+    klientet(id: ID @eq): Klientet @find
+    klientets: [Klientet!]! @all
+    pagesat(id: ID @eq): Pagesat @find
+    pagesats: [Pagesat!]! @all
+
 }
 
-type User {
+type Porosite {
     id: ID!
-    name: String!
-    email: String!
+    data_e_dergeses: DateTime!
+    statusi: Boolean!
+    koment: String!
     created_at: DateTime!
     updated_at: DateTime!
+    klientet: Klientet @belongsTo
+    detajet_e_porosise: Detajet_e_porosise @hasOne
 }
+type Detajet_e_porosise {
+    id_produktit: Int!
+    sasia_e_porosise: Int!
+    cmimi_i_produktit: Int!
+    shuma_totale:Int!
+    created_at: DateTime!
+    updated_at: DateTime!
+    porosite: Porosite @belongsTo
+}
+
+type Klientet {
+    id: ID!
+    emri: String!
+    mbiemri: String!
+    nr_tel: Int!
+    adresa: String!
+    qyteti: String!
+    shteti: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    porosites: [Porosite!]! @hasMany
+    pagesat: Pagesat @hasOne
+}
+type Pagesat {
+    id: ID!
+    data_pageses: DateTime!
+    shuma: Int!
+    created_at: DateTime!
+    updated_at: DateTime!
+    klientet: Klientet @belongsTo
+}
+
+
+
+
+
+
+
+
 
 type Produktet {
     id: ID!
