@@ -15,14 +15,14 @@ class CreatePorositesTable extends Migration
     {
         Schema::create('porosites', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_klientit');
-            $table->unsignedBigInteger('id_detajet_e_porosise');
+            $table->unsignedBigInteger('klientet_id');
+            $table->unsignedBigInteger('detajet_e_porosise_id');
             $table->datetime('data_e_dergeses');
             $table->boolean('statusi');
             $table->text('koment')->default('0');
             $table->timestamps();
-            $table->foreign('id_klientit')->references('id')->on('klientets');
-            $table->foreign('id_detajet_e_porosise')->references('id')->on('detajet_e_porosises');
+            $table->foreign('klientet_id')->references('id')->on('klientets');
+            $table->foreign('detajet_e_porosise_id')->references('id')->on('detajet_e_porosises');
         });
     }
 

@@ -10,7 +10,7 @@ class Produktet extends Model
     use HasFactory;
     
     protected $fillable = [
-        'id_detajet_e_produkteve',
+        'detajet_e_produkteve_id',
         'emri_produktit',
         'pershkrimi_i_produktit',
         'sasia_ne_stok',

@@ -10,7 +10,7 @@ class Detajet_e_porosise extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_produktit',
+        'produkt_id',
         'sasia_e_porosise',
         'cmimi_i_produktit',
         'shuma_totale',

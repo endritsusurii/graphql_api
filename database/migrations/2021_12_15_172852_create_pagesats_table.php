@@ -15,12 +15,12 @@ class CreatePagesatsTable extends Migration
     {
         Schema::create('pagesats', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_klientit');
+            $table->unsignedBigInteger('klientet_id');
             $table->datetime('data_pageses');
             $table->unsignedDecimal('shuma', $precision = 8, $scale = 2);
             $table->timestamps();
 
-            $table->foreign('id_klientit')->references('id')->on('klientets');
+            $table->foreign('klientet_id')->references('id')->on('klientets');
         });
     }
 

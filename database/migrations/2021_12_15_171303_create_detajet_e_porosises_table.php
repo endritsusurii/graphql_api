@@ -15,12 +15,12 @@ class CreateDetajetEPorosisesTable extends Migration
     {
         Schema::create('detajet_e_porosises', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_produktit');
+            $table->unsignedBigInteger('produkt_id');
             $table->integer('sasia_e_porosise');
             $table->unsignedDecimal('cmimi_i_produktit', $precision = 8, $scale = 2);
             $table->unsignedDecimal('shuma_totale', $precision = 8, $scale = 2);
             $table->timestamps();
-            $table->foreign('id_produktit')->references('id')->on('produktets');
+            $table->foreign('produkt_id')->references('id')->on('produktets');
         });
     }
 

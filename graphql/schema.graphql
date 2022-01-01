@@ -5,15 +5,18 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    porosite(id: ID @eq): Porosite @find
-    porosites: [Porosite!]! @all
+    porosia(id: ID @eq): Porosite @find
+    porosite: [Porosite!]! @all
     detajet_e_porosise(id: ID @eq): Detajet_e_porosise @find
-    detajet_e_porosises: [Detajet_e_porosise!]! @all
-    klientet(id: ID @eq): Klientet @find
-    klientets: [Klientet!]! @all
-    pagesat(id: ID @eq): Pagesat @find
-    pagesats: [Pagesat!]! @all
-
+    detajet_e_porosive: [Detajet_e_porosise!]! @all
+    klienti(id: ID @eq): Klientet @find
+    klientet: [Klientet!]! @all
+    pagesa(id: ID @eq): Pagesat @find
+    pagesat: [Pagesat!]! @all
+    produkti(id: ID @eq): Produktet @find
+    produktet: [Produktet!]! @all
+    detajet_e_produktit(id: ID @eq): Detajet_e_produkteve @find
+    detajet_e_produkteve: [Detajet_e_produkteve!]! @all
 }
 
 type Porosite {

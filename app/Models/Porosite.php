@@ -10,8 +10,8 @@ class Porosite extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_klientit',
-        'id_detajet_e_porosise',
+        'klientet_id',
+        'detajet_e_porosise_id',
         'data_e_dergeses',
         'statusi',
         'koment',

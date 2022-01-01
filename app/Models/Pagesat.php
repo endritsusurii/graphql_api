@@ -10,7 +10,7 @@ class Pagesat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_klientit',
+        'klientet_id',
         'data_pageses',
         'shuma',
     ];
