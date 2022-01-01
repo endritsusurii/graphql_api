@@ -77,3 +77,4 @@ type Detajet_e_produkteve {
     updated_at: DateTime!
     produktet: [Produktet!]! @belongsTo
 }
+
