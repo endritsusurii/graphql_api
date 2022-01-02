@@ -18,7 +18,16 @@ type Query {
     detajet_e_produktit(id: ID @eq): Detajet_e_produkteve @find
     detajet_e_produkteve: [Detajet_e_produkteve!]! @all
 }
-
+type Mutation {
+    createKlientet(
+    emri: String!
+    mbiemri: String!
+    nr_tel: Int!
+    adresa: String!
+    qyteti: String!
+    shteti: String!
+  ): Klientet @create
+}
 type Porosite {
     id: ID!
     data_e_dergeses: DateTime!
