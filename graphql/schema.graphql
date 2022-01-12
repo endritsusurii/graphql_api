@@ -20,11 +20,11 @@ type Query {
 }
 type Mutation {
     createKlientet(
-    emri: String!
-    mbiemri: String!
-    nr_tel: Int!
-    adresa: String!
-    qyteti: String!
+    emri: String!,
+    mbiemri: String!,
+    nr_tel: Int!,
+    adresa: String!,
+    qyteti: String!,
     shteti: String!
   ): Klientet @create
 }
