@@ -17,9 +17,9 @@ class Detajet_e_porosise extends Model
     ];
 
     public function porosite(){
-        return $this->belongsTo(Porosite::class);
+        return $this->hasOne(Porosite::class);
     }
     public function produktet() {
-        return $this->hasOne(Produktet::class);
+        return $this->belongsTo(Produktet::class);
     }
 }

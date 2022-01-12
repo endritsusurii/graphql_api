@@ -27,7 +27,36 @@ type Mutation {
     qyteti: String!,
     shteti: String!
   ): Klientet @create
+  createProduktet(
+    emri_produktit: String!
+    pershkrimi_i_produktit: String!
+    sasia_ne_stok: Int!
+    cmimi: Int!
+  ): Produktet @create
+  createDetajet_e_produkteve(
+    foto: String!
+  ): Detajet_e_produkteve @create
+  createPagesat(
+      data_pageses: DateTime!
+      shuma: Int!
+      klientet_id: Int!
+  ): Pagesat @create
+  createPorosite(
+      data_e_dergeses: DateTime!
+      statusi: Boolean!
+      koment: String!
+      klientet_id: Int!
+      detajet_e_porosise_id: Int!
+  ): Porosite @create
+  createDetajet_e_porosise(
+      sasia_e_porosise: Int!
+      cmimi_i_produktit: Int!
+      shuma_totale: Int!
+      produkt_id: Int!
+  ): Detajet_e_porosise @create
 }
+
+
 type Porosite {
     id: ID!
     data_e_dergeses: DateTime!
@@ -36,16 +65,17 @@ type Porosite {
     created_at: DateTime!
     updated_at: DateTime!
     klientet: Klientet @belongsTo
-    detajet_e_porosise: Detajet_e_porosise @hasOne
+    detajet_e_porosise: Detajet_e_porosise @belongsTo
 }
 type Detajet_e_porosise {
-    id_produktit: Int!
+    id: ID!
     sasia_e_porosise: Int!
     cmimi_i_produktit: Int!
     shuma_totale:Int!
     created_at: DateTime!
     updated_at: DateTime!
-    porosite: Porosite @belongsTo
+    porosite: Porosite @hasOne
+    produktet: [Produktet] @belongsTo
 }
 
 type Klientet {
@@ -78,12 +108,13 @@ type Produktet {
     created_at: DateTime!
     updated_at: DateTime!
     detajet_e_produkteve: [Detajet_e_produkteve!]! @hasMany
+    detajet_e_porosise: Detajet_e_porosise @hasOne
 }
 type Detajet_e_produkteve {
     id: ID!
     foto: String!
     created_at: DateTime!
     updated_at: DateTime!
-    produktet: [Produktet!]! @belongsTo
+    produkti: Produktet @belongsTo
 }
 

@@ -10,7 +10,6 @@ class Produktet extends Model
     use HasFactory;
     
     protected $fillable = [
-        'detajet_e_produkteve_id',
         'emri_produktit',
         'pershkrimi_i_produktit',
         'sasia_ne_stok',
@@ -21,6 +20,6 @@ class Produktet extends Model
         return $this->hasMany(Detajet_e_produkteve::class);
     }
     public function detajet_e_porosise(){
-        return $this->belongsTo(Detajet_e_porosise::class);
+        return $this->hasOne(Detajet_e_porosise::class);
     }
 }

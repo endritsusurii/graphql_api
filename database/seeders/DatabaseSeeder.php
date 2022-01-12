@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KlientetTableSeeder::class,
             PagesatTableSeeder::class,
-            Detajet_e_produkteveTableSeeder::class,
             ProduktetTableSeeder::class,
+            Detajet_e_produkteveTableSeeder::class,
             Detajet_e_porosiseTableSeeder::class,
             PorositeTableSeeder::class,
         ]);

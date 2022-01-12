@@ -10,6 +10,7 @@ class Detajet_e_produkteve extends Model
     use HasFactory;
 
     protected $fillable = [
+        'produkt_id',
         'foto',
     ];
 

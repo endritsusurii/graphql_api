@@ -21,6 +21,6 @@ class Porosite extends Model
         return $this->belongsTo(Klientet::class);
     }
     public function detajet_e_porosise(){
-        return $this->hasOne(Detajet_e_porosise::class);
+        return $this->belongsTo(Detajet_e_porosise::class);
     }
 }

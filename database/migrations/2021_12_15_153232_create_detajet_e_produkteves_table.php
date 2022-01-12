@@ -15,8 +15,11 @@ class CreateDetajetEProduktevesTable extends Migration
     {
         Schema::create('detajet_e_produkteves', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('produkt_id');
             $table->string('foto');
             $table->timestamps();
+
+            $table->foreign('produkt_id')->references('id')->on('produktets');
         });
     }
 
