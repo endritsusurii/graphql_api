@@ -115,6 +115,6 @@ type Detajet_e_produkteve {
     foto: String!
     created_at: DateTime!
     updated_at: DateTime!
-    produkti: Produktet @belongsTo
+    produkti: [Produktet!]! @belongsTo
 }
 
