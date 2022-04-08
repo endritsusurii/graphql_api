@@ -20,7 +20,7 @@ Local Link: http://127.0.0.1:8000/graphql-playground
 
 GraphQL schema is in root folder graphql>schema.graphql
 
-# Query
+# Basic example query 
 {
   klientet{
     id
@@ -29,7 +29,7 @@ GraphQL schema is in root folder graphql>schema.graphql
   }
 }
 
-# Mutation 
+# Basic example mutation 
 
 mutation {
   createPagesat(
