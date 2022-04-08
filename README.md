@@ -20,12 +20,26 @@ Local Link: http://127.0.0.1:8000/graphql-playground
 
 GraphQL schema is in root folder graphql>schema.graphql
 
+# Query
 {
   klientet{
     id
     emri
     mbiemri
-    
   }
 }
 
+# Mutation 
+
+mutation {
+  createPagesat(
+    data_pageses: "2022-01-05 11:51:31"
+    shuma: 50
+    klientet_id: 1
+  ) {
+    id
+    data_pageses
+    shuma
+    klientet_id
+  }
+}
