@@ -19,7 +19,7 @@ class CreatePorositesTable extends Migration
             $table->unsignedBigInteger('detajet_e_porosise_id');
             $table->datetime('data_e_dergeses');
             $table->boolean('statusi');
-            $table->text('koment')->nullable('0');
+            $table->text('koment')->nullable();
             $table->timestamps();
             $table->foreign('klientet_id')->references('id')->on('klientets');
             $table->foreign('detajet_e_porosise_id')->references('id')->on('detajet_e_porosises');
