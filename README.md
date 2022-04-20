@@ -1,6 +1,6 @@
 # Installation
 
-create a database: master_thesis
+create a database: ``` master_thesis```
 ```php
 composer install
 ```
@@ -21,9 +21,9 @@ php artisan serve
 
 To test the GraphQL API use graphql-playground
 
-Local Link: http://127.0.0.1:8000/graphql-playground
+Local Link: ``` http://127.0.0.1:8000/graphql-playground ```
 
-GraphQL schema is in root folder graphql>schema.graphql
+GraphQL schema is in root folder ```graphql>schema.graphql```
 
 # Basic example query 
 ```graphql
